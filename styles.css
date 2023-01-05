@@ -1,0 +1,65 @@
+html{
+    font-size: 1.3em;
+}
+
+
+footer{
+    position: fixed;
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    /*background-color: #ECDBBA;*/
+    width: 100%;
+    border-top: inset;
+    
+    
+}
+
+#title{
+    /*background-color: #C84B31;*/
+    padding-top: 50px;
+    height: 100px;
+    text-align: center;
+    border-bottom: inset;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #191919;
+    color: white;
+}
+
+#base{
+    background-color: #2D4263;
+    text-align: center;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 100%;
+    border-radius: 20px;
+}
+
+#addButton, #calcButton, #resetButton{
+    height: 35px;
+    width: 120px;
+    border-radius: 25px;
+    margin: 10px;
+    background-color: greenyellow;
+}
+
+#addButton:hover, #calcButton:hover, #resetButton:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 1024px){
+    #base{
+        width: auto;
+    }
+    
+    
+    
+}
