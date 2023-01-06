@@ -1,12 +1,45 @@
 var orderCount = 0;
 var profit = 0;
+var yearsPay = 3.00;
+var percentage = 0.75;
 
 function add() {
     let miles75;
     let miles = document.getElementById("miles").value;
     let tips = document.getElementById("tips").value;
     
+    //which year selected determines base pay for first 5 miles
+    if(document.getElementById("years").value == 0){
+        yearsPay = 3.00;
+    }
+    else if(document.getElementById("years").value == 1){
+        yearsPay = 3.50;
+    }
+    else if(document.getElementById("years").value == 2){
+        yearsPay = 3.75;
+    }
+    else if(document.getElementById("years").value == 3){
+        yearsPay = 4.00;
+    }
+    else if(document.getElementById("years").value == 4){
+        yearsPay = 4.25;
+    }
+    else if(document.getElementById("years").value == 5){
+        yearsPay = 4.50;
+    }
+    else if(document.getElementById("years").value == 6){
+        yearsPay = 4.75;
+    }
+    else if(document.getElementById("years").value == 7){
+        yearsPay = 5.00;
+    }
     
+    
+    
+    
+    
+    
+    //input validation for cash sign
     if(tips.startsWith("$")){
         tips = tips.replace("$","");
     }
@@ -21,13 +54,13 @@ function add() {
         return
     }
     
-    //assuming drivers get 3 of first 5, then 75% for each mile after 5 miles
+    //assuming drivers get yearsPay of first 5 miles, then percentage for each mile after 5 miles
     if (milesFloat > 5){
         miles75 = milesFloat - 5;
-        profit += 3 + (miles75 * 0.75);
+        profit += yearsPay + (miles75 * percentage);
     }
     else{
-        profit += 3;
+        profit += yearsPay;
     }
     
     profit += tipsFloat;

@@ -3,10 +3,9 @@
 <head>
     
     <meta charset="utf-8">
-    
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     
-    <title>PFD Profit Calculator</title>
+    <title>PFD Driver Profit Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <script src="calc.js"></script>
     
@@ -14,14 +13,26 @@
     
 <body>
     <header>
-    <h1 id="title">PFD Profit Calculator</h1>
+    <h1 id="title">PFD Driver Profit Calculator</h1>
     </header>
     
     <div id="base">
-        <p>Fill in the form for each order and click "ADD", then click "CALCULATE" to find your total.</p>
+        <p>Fill in the form for each order and click "ADD", then, when you are finished click "CALCULATE" to find your total.</p>
        
         
         <form>
+        <label>Years worked at PFD?<br>"0" if less than a year:</label>
+        <select id="years" name="years">
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+            <option value=7>7</option>
+        </select><br>
+            
         <label>Miles:<br></label>
         <input type="text" id="miles" name="miles"><br>
         <label>Tips:<br></label>

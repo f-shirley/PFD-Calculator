@@ -10,7 +10,6 @@ footer{
     bottom: 0;
     /*background-color: #ECDBBA;*/
     width: 100%;
-    border-top: inset;
     
     
 }
@@ -39,6 +38,10 @@ body{
     width: 500px;
     height: 100%;
     border-radius: 20px;
+}
+
+select{
+    font-size: 1.2em;
 }
 
 #addButton, #calcButton, #resetButton{
