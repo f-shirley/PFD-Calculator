@@ -86,7 +86,7 @@ function add() {
     document.getElementById("miles").value = "";
     document.getElementById("tips").value = "";
 
-    document.getElementById("totalProfit").innerHTML = "Total Profit: $" + profit;
+    document.getElementById("totalProfit").innerHTML = "Total Profit: $" + profit.toFixed(2);
 }
 
 function reset() {
