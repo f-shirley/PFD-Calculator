@@ -2,6 +2,19 @@ var orderCount = 0;
 var profit = 0;
 var yearsPay = 3.00;
 var percentage = 0.75;
+var orderEntries = "";
+
+// toggles display property between inline and none
+function toggleDisplayButton(id) {
+    let item = document.getElementById(id);
+
+    if(item.style.display == 'none'){
+        item.style.display = 'inline';
+    }
+    else{
+        item.style.display = 'none';
+    }
+}
 
 function add() {
     let miles75;
@@ -65,28 +78,24 @@ function add() {
     
     orderCount+=1;
     document.getElementById("orderCount").innerHTML = "Order Count: " + orderCount;
-    
-    document.getElementById("miles").value = "";
-    document.getElementById("tips").value = "";
-}
 
-function calculate() {
-    orderCount = 0;
-    document.getElementById("orderCount").innerHTML = "Order Count: " + orderCount;
-    
-    document.getElementById("totalProfit").innerHTML = "Total Profit: $" + profit;
+    //add entries to table
+    orderEntries = "<tr><td>" + milesFloat + "</td><td>$" + tipsFloat + "</td></tr>"
+    document.getElementById("orderDisplayTable").innerHTML += orderEntries;
     
     document.getElementById("miles").value = "";
     document.getElementById("tips").value = "";
-    
-    profit = 0;
+
+    document.getElementById("totalProfit").innerHTML = "Total Profit: $" + profit;
 }
 
 function reset() {
     orderCount = 0;
     profit = 0;
+    orderEntries = "";
     document.getElementById("miles").value = "";
     document.getElementById("tips").value = "";
     document.getElementById("orderCount").innerHTML = "Order Count: " + orderCount;
     document.getElementById("totalProfit").innerHTML = "Total Profit: $" + profit;
+    document.getElementById("orderDisplayTable").innerHTML = "<tr><th>Miles</th><th>Tips</th></tr>";
 }

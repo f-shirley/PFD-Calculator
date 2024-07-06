@@ -17,52 +17,64 @@
     </header>
     
     <div id="base">
-        <p>Fill in the form for each order and click "ADD", then, when you are finished click "CALCULATE" to find your total.</p>
-       
-        
-        <form>
-        <label>Years worked at PFD?<br>"0" if less than a year:</label>
-        <select id="years" name="years">
-            <option value=0>0</option>
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-            <option value=6>6</option>
-            <option value=7>7</option>
-        </select><br>
+
+        <button class="helpButton" onclick="toggleDisplayButton('helpText')">?</button><br>
+
+        <div id="helpText" class="helpText" style="display: none;">
+            <ul>
+                <li>Fill in the form for each order and click "ADD"</li>
+                <li>"Total Profit" is updated after each entry</li>
+                <li>"Toggle Order Tracker" will display current orders entered</li>
+                <li>"RESET" to start over</li>
+            </ul>
+        </div>
+
+        <div class="yearsWorkedPrompt">
+            <div style="display: inline;">Years worked at PFD?</div>
             
-        <label>Miles:<br></label>
-        <input type="text" id="miles" name="miles"><br>
-        <label>Tips:<br></label>
-        <input type="text" id="tips" name="tips>"><br>
-        <p id="orderCount">Order Count: 0</p>
-        <input type="button" id="addButton" value="ADD" onclick="add()"><br>
-        <input type="button" id="calcButton" value="CALCULATE" onclick="calculate()">
-        
+            <select id="years" name="years">
+                <option value=0>0</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+                <option value=6>6</option>
+                <option value=7>7</option>
+            </select><br>
+
+            <div class="smallerText">("0" if less than a year)</div>
+        </div>
+
+        <form>    
+            <label>Miles:<br></label>
+            <input type="text" id="miles" name="miles"><br>
+            <label>Tips:<br></label>
+            <input type="text" id="tips" name="tips>"><br>
+            <p id="orderCount">Order Count: 0</p>
+            <input type="button" class="buttonStyles" id="addButton" value="ADD" onclick="add()"><br>
         </form>
+
+        <button class="buttonStyles" onclick="toggleDisplayButton('orderDisplayTable')">TOGGLE ORDER TRACKER</button><br>
+        <table id="orderDisplayTable" style="display: none;">
+            <tr>
+                <th>Miles</th>
+                <th>Tips</th>
+            </tr>
+        </table>
         
-        <p id="totalProfit">Total Profit: $0</p>
-        
-        <button type="button" id="resetButton" onclick="reset()">RESET</button>
-        
-        <p>*"Total Profit" may be different from cash out</p>
-    
-        
-        
+        <div id="bottomCenter">
+            <p id="totalProfit">Total Profit: $0</p>
+            
+            <button type="button" class="buttonStyles" id="resetButton" onclick="reset()">RESET</button>
+            
+            <p class="smallerText">*"Total Profit" may be different from cash out</p>
+        </div>
+         
     </div>
     
-    
-    
-    
-    
-    
-    
-    
-<footer><p id="copyright">Franklin Shirley &#169 2023</p></footer>
+    <footer><p id="copyright">Franklin Shirley &#169 2023</p></footer>
         
 </body>
 
 </html>
-
